@@ -28,6 +28,7 @@ defmodule LiveViewStudioWeb.Router do
     live "/paginate", PaginateLive
     live "/sort", SortLive
     live "/volunteers", VolunteersLive
+    live "/infinite-scroll", InfiniteScrollLive
   end
 
   # Other scopes may use custom stacks.
