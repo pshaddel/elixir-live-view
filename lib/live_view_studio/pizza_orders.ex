@@ -30,6 +30,8 @@ defmodule LiveViewStudio.PizzaOrders do
       [%PizzaOrder{}, ...]
   """
   def list_pizza_orders(page: page, per_page: per_page) do
+    :timer.sleep(1000)
+
     query =
       from p in PizzaOrder,
         offset: ^((page - 1) * per_page),
