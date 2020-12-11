@@ -602,7 +602,7 @@ ul.examples {
     }
 
     button:hover {
-      @apply bg-indigo-500;
+      @apply bg-green-700;
     }
 
     button:focus {
