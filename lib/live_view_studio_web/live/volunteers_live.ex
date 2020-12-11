@@ -22,7 +22,7 @@ defmodule LiveViewStudioWeb.VolunteersLive do
 
   def handle_event("save", %{"volunteer" => params}, socket) do
     case Volunteers.create_volunteer(params) do
-      {:ok, volunteer} ->
+      {:ok, _volunteer} ->
         changeset = Volunteers.change_volunteer(%Volunteer{})
 
         socket = assign(socket, changeset: changeset)
