@@ -52,7 +52,7 @@ ul.examples {
   }
 
   .meter > span {
-    @apply flex flex-col justify-center text-cool-gray-900 text-center whitespace-no-wrap bg-yellow-300 font-bold;
+    @apply flex flex-col justify-center text-cool-gray-900 text-center whitespace-nowrap bg-yellow-300 font-bold;
     transition: width 2s ease;
   }
 }
@@ -471,7 +471,7 @@ ul.examples {
     }
 
     td {
-      @apply px-6 py-4 whitespace-no-wrap border-b border-cool-gray-300 text-lg leading-5 font-medium text-cool-gray-900 text-center;
+      @apply px-6 py-4 whitespace-nowrap border-b border-cool-gray-300 text-lg leading-5 font-medium text-cool-gray-900 text-center;
     }
 
     tbody {
@@ -594,7 +594,7 @@ ul.examples {
 
     input[type="text"]:focus,
     input[type="tel"]:focus {
-      @apply outline-none border-indigo-300 shadow-outline-indigo;
+      @apply outline-none border-indigo-300 ring ring-indigo-300;
     }
 
     button {
@@ -606,7 +606,7 @@ ul.examples {
     }
 
     button:focus {
-      @apply outline-none border-green-700 shadow-outline-green;
+      @apply outline-none border-green-700 ring ring-green-300;
     }
 
     .invalid-feedback {
@@ -688,6 +688,52 @@ ul.examples {
       @apply outline-none border-green-700 shadow-outline-green;
     }
   }
+}
+
+/*
+ * Copied from Tailwind v1.0
+ */
+
+.form-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  border-color: #d2d6dc;
+  border-width: 1px;
+  border-radius: 0.375rem;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-input::-moz-placeholder {
+  color: #9fa6b2;
+  opacity: 1;
+}
+
+.form-input:-ms-input-placeholder {
+  color: #9fa6b2;
+  opacity: 1;
+}
+
+.form-input::-ms-input-placeholder {
+  color: #9fa6b2;
+  opacity: 1;
+}
+
+.form-input::placeholder {
+  color: #9fa6b2;
+  opacity: 1;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(164, 202, 254, 0.45);
+  border-color: #a4cafe;
 }
 
 /*
