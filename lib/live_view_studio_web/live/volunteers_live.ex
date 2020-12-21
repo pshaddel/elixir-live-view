@@ -2,7 +2,6 @@ defmodule LiveViewStudioWeb.VolunteersLive do
   use LiveViewStudioWeb, :live_view
 
   alias LiveViewStudio.Volunteers
-  alias LiveViewStudio.Volunteers.Volunteer
 
   def mount(_params, _session, socket) do
     if connected?(socket), do: Volunteers.subscribe()

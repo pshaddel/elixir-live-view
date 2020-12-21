@@ -6,8 +6,18 @@ defmodule LiveViewStudio.BoatsTest do
   describe "boats" do
     alias LiveViewStudio.Boats.Boat
 
-    @valid_attrs %{image: "some image", model: "some model", price: "some price", type: "some type"}
-    @update_attrs %{image: "some updated image", model: "some updated model", price: "some updated price", type: "some updated type"}
+    @valid_attrs %{
+      image: "some image",
+      model: "some model",
+      price: "some price",
+      type: "some type"
+    }
+    @update_attrs %{
+      image: "some updated image",
+      model: "some updated model",
+      price: "some updated price",
+      type: "some updated type"
+    }
     @invalid_attrs %{image: nil, model: nil, price: nil, type: nil}
 
     def boat_fixture(attrs \\ %{}) do
@@ -22,6 +32,39 @@ defmodule LiveViewStudio.BoatsTest do
     test "list_boats/0 returns all boats" do
       boat = boat_fixture()
       assert Boats.list_boats() == [boat]
+    end
+
+    test "list_boats/1 returns boats filtered by type" do
+      fishing = boat_fixture(type: "fishing")
+      _sporting = boat_fixture(type: "sporting")
+
+      criteria = [type: "fishing"]
+
+      assert Boats.list_boats(criteria) == [fishing]
+    end
+
+    test "list_boats/1 returns boats filtered by price" do
+      one_dollar = boat_fixture(price: "$")
+      two_dollars = boat_fixture(price: "$$")
+
+      criteria = [prices: ["$"]]
+
+      assert Boats.list_boats(criteria) == [one_dollar]
+
+      criteria = [prices: ["$", "$$"]]
+
+      assert Boats.list_boats(criteria) == [one_dollar, two_dollars]
+    end
+
+    test "list_boats/1 returns boats filtered by type and price" do
+      fishing_A = boat_fixture(price: "$", type: "fishing")
+      _fishing_B = boat_fixture(price: "$$", type: "fishing")
+      fishing_C = boat_fixture(price: "$$$", type: "fishing")
+      _sporting = boat_fixture(price: "$$", type: "sporting")
+
+      criteria = [type: "fishing", prices: ["$", "$$$"]]
+
+      assert Boats.list_boats(criteria) == [fishing_A, fishing_C]
     end
 
     test "get_boat!/1 returns the boat with given id" do
