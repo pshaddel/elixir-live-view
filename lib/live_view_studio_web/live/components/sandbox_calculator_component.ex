@@ -13,7 +13,9 @@ defmodule LiveViewStudioWeb.SandboxCalculatorComponent do
 
   def render(assigns) do
     ~L"""
-    <form phx-change="calculate" phx-target="<%= @myself %>"
+    <form id="calculator"
+          phx-change="calculate"
+          phx-target="<%= @myself %>"
           phx-submit="get-quote">
       <div class="field">
         <label for="length">Length:</label>

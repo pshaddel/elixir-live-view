@@ -6,7 +6,7 @@ defmodule LiveViewStudioWeb.VolunteerComponent do
   def render(assigns) do
     ~L"""
     <div class="volunteer <%= if @volunteer.checked_out, do: "out" %>"
-          id="<%= @volunteer.id %>">
+          id="volunteer-<%= @volunteer.id %>">
       <div class="name">
         <%= @volunteer.name %>
       </div>

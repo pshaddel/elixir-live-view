@@ -7,14 +7,9 @@ defmodule LiveViewStudioWeb.QuoteComponent do
     {:ok, assign(socket, hrs_until_expires: 24)}
   end
 
-  # def update(assigns, socket) do
-  #   socket = assign(socket, assigns)
-  #   {:ok, socket}
-  # end
-
   def render(assigns) do
     ~L"""
-    <div class="text-center p-6 border-4 border-dashed border-indigo-600">
+    <div id="quote" class="text-center p-6 border-4 border-dashed border-indigo-600">
       <h2 class="text-2xl mb-2">
         Our Best Deal:
       </h2>

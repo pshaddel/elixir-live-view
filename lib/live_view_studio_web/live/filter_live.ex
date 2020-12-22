@@ -18,7 +18,7 @@ defmodule LiveViewStudioWeb.FilterLive do
     ~L"""
     <h1>Daily Boat Rentals</h1>
     <div id="filter">
-      <form phx-change="filter">
+      <form id="change-filter" phx-change="filter">
         <div class="filters">
           <select name="type">
             <%= options_for_select(type_options(), @type) %>
@@ -34,7 +34,7 @@ defmodule LiveViewStudioWeb.FilterLive do
 
       <div class="boats">
         <%= for boat <- @boats do %>
-          <div class="card">
+          <div class="card" id="boat-<%= boat.id %>">
             <img src="<%= boat.image %>">
             <div class="content">
               <div class="model">

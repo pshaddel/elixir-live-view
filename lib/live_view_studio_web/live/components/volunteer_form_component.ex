@@ -13,6 +13,7 @@ defmodule LiveViewStudioWeb.VolunteerFormComponent do
   def render(assigns) do
     ~L"""
     <%= f = form_for @changeset, "#",
+          id: "create-volunteer",
           phx_submit: "save",
           phx_change: "validate",
           phx_target: @myself %>

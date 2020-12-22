@@ -1,6 +1,6 @@
 <h1>Food Bank Donations</h1>
 <div id="donations">
-  <form phx-change="select-per-page">
+  <form id="select-per-page" phx-change="select-per-page">
     Show
     <select name="per-page">
       <%= options_for_select([5, 10, 15, 20], @options.per_page) %>
@@ -24,7 +24,7 @@
       </thead>
       <tbody>
         <%= for donation <- @donations do %>
-          <tr>
+          <tr id="donation-<%= donation.id %>">
             <td class="item">
               <span class="id"><%= donation.id %></span>
               <%= donation.emoji %> <%= donation.item %>
