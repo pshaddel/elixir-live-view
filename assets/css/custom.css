@@ -772,6 +772,32 @@ form[action="/users/settings"] {
   }
 }
 
+/* Top Secret */
+
+#top-secret {
+  @apply flex items-center justify-center py-10;
+
+  img {
+    @apply w-40 mr-8;
+  }
+
+  .mission {
+    @apply text-center;
+
+    h2 {
+      @apply text-3xl text-cool-gray-600 mb-2 font-bold;
+    }
+
+    h3 {
+      @apply text-3xl font-bold mb-2 text-indigo-600;
+    }
+
+    p {
+      @apply text-3xl text-cool-gray-600 mb-2;
+    }
+  }
+}
+
 /*
  * Copied from Tailwind v1.0
  */
