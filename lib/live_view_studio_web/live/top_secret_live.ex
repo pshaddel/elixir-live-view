@@ -12,7 +12,7 @@ defmodule LiveViewStudioWeb.TopSecretLive do
       <img src="images/spy.svg">
       <div class="mission">
         <h2>Your Mission</h2>
-        <h3>001</h3>
+        <h3>007</h3>
         <p>
           (should you choose to accept it)
         </p>
