@@ -11,6 +11,11 @@
   </head>
   <body>
     <header>
+      <section class="container">
+        <nav role="navigation">
+          <%= render "_user_menu.html", assigns %>
+        </nav>
+      </section>
     </header>
     <%= @inner_content %>
   </body>
