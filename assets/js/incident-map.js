@@ -4,7 +4,7 @@ class IncidentMap {
   constructor(element, center, markerClickedCallback) {
     this.map = L.map(element).setView(center, 13);
 
-    const accessToken = "pk.eyJ1IjoicHJhZ21hdGljc3R1ZGlvIiwiYSI6ImNra213cmpsNTExaHUybnF0MmtnNngyemQifQ.wC2c2fvuZfhVNp7PzhIJyA";
+    const accessToken = "your-access-token-goes-here";
 
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
