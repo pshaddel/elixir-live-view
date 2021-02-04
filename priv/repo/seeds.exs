@@ -15,6 +15,8 @@ alias LiveViewStudio.Boats.Boat
 alias LiveViewStudio.Servers.Server
 alias LiveViewStudio.Donations.Donation
 alias LiveViewStudio.PizzaOrders.PizzaOrder
+alias LiveViewStudio.Incidents.Incident
+alias LiveViewStudio.Geo
 
 %Boat{
   model: "1760 Retriever Jon Deluxe",
@@ -306,6 +308,29 @@ for _i <- 1..1000 do
   %PizzaOrder{
     username: Faker.Internet.user_name(),
     pizza: pizza
+  }
+  |> Repo.insert!()
+end
+
+incident_descriptions = [
+  "🦊 Fox in the henhouse",
+  "🏢 Stuck in an elevator",
+  "🚦 Traffic lights out",
+  "🏎 Reckless driving",
+  "🐻 Bear in the trash",
+  "🤡 Disturbing the peace",
+  "🔥 BBQ fire",
+  "🙀 Cat stuck in a tree",
+  "🐶 Dog on the loose"
+]
+
+for description <- incident_descriptions do
+  {lat, lng} = Geo.randomDenverLatLng()
+
+  %Incident{
+    description: description,
+    lat: lat,
+    lng: lng
   }
   |> Repo.insert!()
 end
