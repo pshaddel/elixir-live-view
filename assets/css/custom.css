@@ -879,6 +879,114 @@ form[action="/users/settings"] {
   }
 }
 
+/* File Uploads */
+
+#desks {
+  @apply max-w-4xl mx-auto;
+
+  form {
+    @apply bg-white px-10 py-8 mb-6 shadow rounded-lg mx-auto w-full max-w-xl;
+
+    input[type="text"] {
+      @apply mb-4 appearance-none block w-full px-3 py-2 border border-cool-gray-300 rounded-md transition duration-150 ease-in-out;
+    }
+
+    input[type="text"]:focus {
+      @apply outline-none ring ring-indigo-300 border-indigo-300;
+    }
+
+    input[type="file"] {
+    }
+
+    button {
+      @apply mt-4 w-full py-2 px-4 border border-transparent font-medium rounded-md text-white bg-indigo-600 transition duration-150 ease-in-out;
+    }
+
+    button:focus {
+      @apply outline-none border-indigo-700 ring ring-indigo-300;
+    }
+
+    button:active {
+      @apply bg-indigo-700;
+    }
+
+    button:hover {
+      @apply bg-indigo-500;
+    }
+
+    .hint {
+      @apply my-4 text-gray-600 text-sm;
+    }
+
+    .drop {
+      @apply flex items-baseline justify-center space-x-1 my-2 p-4 border-2 border-dashed border-gray-300 rounded-md text-center text-gray-600;
+
+      label {
+        @apply cursor-pointer font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500;
+      }
+
+      p {
+        @apply text-sm text-gray-500;
+      }
+
+      svg {
+        @apply mx-auto h-12 w-12 text-gray-400;
+      }
+    }
+
+    .entry {
+      @apply my-6 flex items-center justify-start space-x-6;
+
+      img {
+        @apply w-32;
+      }
+
+      .progress {
+        @apply w-full;
+      }
+
+      .progress .value {
+        @apply text-left mb-2 text-xs font-semibold inline-block text-pink-600;
+      }
+
+      .progress .bar {
+        @apply flex h-2 overflow-hidden text-base bg-pink-200 rounded-lg mb-4;
+      }
+
+      .progress .bar > span {
+        @apply shadow-md bg-pink-500;
+        transition: width 1s ease;
+      }
+
+      a {
+        @apply text-3xl font-bold text-cool-gray-700 hover:text-red-700;
+      }
+    }
+
+    .error {
+      color: #a94442;
+      display: block;
+      margin: 0.5rem 0;
+    }
+  }
+
+  #photos {
+    @apply flex flex-wrap items-center justify-center sm:justify-start;
+
+    .photo {
+      @apply text-center p-4 m-4 border-2 border-cool-gray-300 rounded-xl;
+
+      img {
+        @apply h-64 sm:h-36 mx-auto object-fill;
+      }
+
+      .name {
+        @apply mt-2 text-base text-cool-gray-600 font-medium;
+      }
+    }
+  }
+}
+
 /*
  * Copied from Tailwind v1.0
  */
