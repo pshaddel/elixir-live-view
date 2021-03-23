@@ -49,12 +49,19 @@ defmodule LiveViewStudio.Desks do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_desk(%Desk{} = desk, attrs \\ %{}) do
+  def create_desk(%Desk{} = desk, attrs \\ %{}, fun) do
     desk
     |> Desk.changeset(attrs)
     |> Repo.insert()
+    |> after_save(fun)
     |> broadcast(:desk_created)
   end
+
+  defp after_save({:ok, desk}, fun) do
+    {:ok, _desk} = fun.(desk)
+  end
+
+  defp after_save(error, _fun), do: error
 
   @doc """
   Updates a desk.
