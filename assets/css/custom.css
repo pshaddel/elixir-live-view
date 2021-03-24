@@ -929,8 +929,8 @@ form[action="/users/settings"] {
         @apply text-sm text-gray-500;
       }
 
-      svg {
-        @apply mx-auto h-12 w-12 text-gray-400;
+      img {
+        @apply mx-auto h-12 w-12;
       }
     }
 
