@@ -39,6 +39,7 @@ defmodule LiveViewStudioWeb.Router do
     live "/key-events", KeyEventsLive
     live "/desks", DesksLive
     live "/underwater", UnderwaterLive
+    live "/underwater/show", UnderwaterLive, :show_modal
   end
 
   # Other scopes may use custom stacks.

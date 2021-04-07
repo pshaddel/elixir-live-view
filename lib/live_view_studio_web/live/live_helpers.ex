@@ -1,7 +1,19 @@
 defmodule LiveViewStudioWeb.LiveHelpers do
   import Phoenix.LiveView
+  import Phoenix.LiveView.Helpers
 
   alias LiveViewStudio.Accounts
+
+  def live_modal(socket, component, opts) do
+    live_component(
+      socket,
+      LiveViewStudioWeb.ModalComponent,
+      id: :modal,
+      component: component,
+      return_to: Keyword.fetch!(opts, :return_to),
+      opts: opts
+    )
+  end
 
   def assign_current_user(socket, session) do
     assign_new(

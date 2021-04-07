@@ -54,10 +54,11 @@ defmodule LiveViewStudioWeb.ServersLive do
       <div class="main">
         <div class="wrapper">
           <%= if @live_action == :new do %>
-            <%= live_component @socket,
+            <%= live_modal @socket,
                     LiveViewStudioWeb.ServerFormComponent,
                     id: :new,
-                    title: "Add New Server" %>
+                    title: "Add New Server",
+                    return_to: Routes.live_path(@socket, __MODULE__) %>
           <% else %>
             <%= live_component @socket, LiveViewStudioWeb.ServerComponent,
                              id: @selected_server.id,
