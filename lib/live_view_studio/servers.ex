@@ -18,7 +18,7 @@ defmodule LiveViewStudio.Servers do
 
   """
   def list_servers do
-    Repo.all(Server)
+    Repo.all(from s in Server, order_by: [desc: s.id])
   end
 
   @doc """
@@ -53,6 +53,7 @@ defmodule LiveViewStudio.Servers do
     %Server{}
     |> Server.changeset(attrs)
     |> Repo.insert()
+    |> broadcast(:server_created)
   end
 
   @doc """
@@ -71,6 +72,7 @@ defmodule LiveViewStudio.Servers do
     server
     |> Server.changeset(attrs)
     |> Repo.update()
+    |> broadcast(:server_updated)
   end
 
   @doc """
@@ -101,4 +103,20 @@ defmodule LiveViewStudio.Servers do
   def change_server(%Server{} = server, attrs \\ %{}) do
     Server.changeset(server, attrs)
   end
+
+  def subscribe do
+    Phoenix.PubSub.subscribe(LiveViewStudio.PubSub, "servers")
+  end
+
+  defp broadcast({:ok, server}, event) do
+    Phoenix.PubSub.broadcast(
+      LiveViewStudio.PubSub,
+      "servers",
+      {event, server}
+    )
+
+    {:ok, server}
+  end
+
+  defp broadcast({:error, _reason} = error, _event), do: error
 end

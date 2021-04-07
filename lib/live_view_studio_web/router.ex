@@ -28,6 +28,7 @@ defmodule LiveViewStudioWeb.Router do
     live "/autocomplete", AutocompleteLive
     live "/filter", FilterLive
     live "/servers", ServersLive
+    live "/servers/new", ServersLive, :new
     live "/paginate", PaginateLive
     live "/sort", SortLive
     live "/volunteers", VolunteersLive
@@ -37,6 +38,7 @@ defmodule LiveViewStudioWeb.Router do
     live "/map", MapLive
     live "/key-events", KeyEventsLive
     live "/desks", DesksLive
+    live "/underwater", UnderwaterLive
   end
 
   # Other scopes may use custom stacks.
