@@ -29,9 +29,9 @@
     "postcss-import": "^13.0.0",
     "postcss-loader": "^4.1.0",
     "postcss-nested": "^4.2.1",
-    "tailwindcss": "^2.0.1",
+    "tailwindcss": "^2.1.1",
     "terser-webpack-plugin": "^2.3.2",
-    "webpack": "4.41.5",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.2"
   }
 }
