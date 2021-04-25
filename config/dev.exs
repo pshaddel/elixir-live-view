@@ -6,6 +6,7 @@ config :live_view_studio, LiveViewStudio.Repo,
   password: "postgres",
   database: "live_view_studio_dev",
   hostname: "localhost",
+  port: 5439,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
