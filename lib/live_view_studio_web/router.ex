@@ -19,6 +19,7 @@ defmodule LiveViewStudioWeb.Router do
 
     live "/", PageLive
     live "/light", LightLive
+    live "/form", FormLive
   end
 
   # Other scopes may use custom stacks.

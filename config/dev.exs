@@ -4,6 +4,7 @@ use Mix.Config
 config :live_view_studio, LiveViewStudio.Repo,
   username: "postgres",
   password: "postgres",
+  port: 5439,
   database: "live_view_studio_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
