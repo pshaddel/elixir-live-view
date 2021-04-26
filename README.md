@@ -1,4 +1,5 @@
 # LiveView Studio
+This is a practice from [pragmaticstudio](https://github.com/pragmaticstudio) and I tried to commit my excercise here. 
 
 ## Installation
 
