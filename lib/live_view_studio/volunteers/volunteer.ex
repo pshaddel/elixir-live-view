@@ -10,7 +10,7 @@ defmodule LiveViewStudio.Volunteers.Volunteer do
     timestamps()
   end
 
-  @phone ~r/^\d{3}[\s-.]?\d{3}[\s-.]?\d{4}$/
+  # @phone ~r/^\d{3}[\s-.]?\d{3}[\s-.]?\d{4}$/
 
   @doc false
   def changeset(volunteer, attrs) do
@@ -18,6 +18,7 @@ defmodule LiveViewStudio.Volunteers.Volunteer do
     |> cast(attrs, [:name, :phone, :checked_out])
     |> validate_required([:name, :phone])
     |> validate_length(:name, min: 2, max: 100)
-    |> validate_format(:phone, @phone, message: "must be a valid phone number")
+
+    # |> validate_format(:phone, @phone, message: "must be a valid phone number")
   end
 end
